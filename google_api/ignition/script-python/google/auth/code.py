@@ -39,14 +39,17 @@ class GoogleOAuthClient(object):
 			root_tag_path    (str): Parent path to DataSet tag which holds Authentication information.
 		"""
 		self.root_tag_path = root_tag_path												# Modify with your enviroment
-		self.tag_path = "%s/OAuthClient" % root_tag_path										# Modify with your enviroment
+		self.tag_path = "%s/OAuthClient" % root_tag_path									# Modify with your enviroment
 		
-		cfg = system.tag.getConfiguration(root_tag_path)[0]["parameters"]				# Modify with your enviroment
-		self.auth_uri = cfg["Auth URI"].value											# Modify with your enviroment
-		self.redirect_uri = cfg["Redirect URI"].value									# Modify with your enviroment
-		self.token_uri = cfg["Token URI"].value or GOOGLE_TOKEN_ENDPOINT				# Modify with your enviroment
-		self.default_scope = cfg["Scope"].value											# Modify with your enviroment
-		self.logger = system.util.getLogger("GoogleOAuthClient")
+		cfg = system.tag.getConfiguration(root_tag_path)[0].get("parameters", None)			# Modify with your enviroment
+		if cfg:
+			self.auth_uri = cfg["Auth URI"].value											# Modify with your enviroment
+			self.redirect_uri = cfg["Redirect URI"].value									# Modify with your enviroment
+			self.token_uri = cfg["Token URI"].value or GOOGLE_TOKEN_ENDPOINT			# Modify with your enviroment
+			self.default_scope = cfg["Scope"].value										# Modify with your enviroment
+			self.logger = system.util.getLogger("GoogleOAuthClient")
+		else:
+			raise ValueError("Please check the 'root_tag_path' configuration")
 
 	# ------------------------------------------------------
 	# DataSet helpers
