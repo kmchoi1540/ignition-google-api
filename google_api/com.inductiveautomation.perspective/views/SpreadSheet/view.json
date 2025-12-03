@@ -13,7 +13,7 @@
   },
   "params": {
     "config": {
-      "docId": "1QXhvvMehGxlF0OCSrUVMoOgFO2vvRaCnhAa22jVVxPk",
+      "docId": "",
       "rootPath": "[default]Google",
       "rowAsHeader": true,
       "sheetIdx": 0
@@ -177,7 +177,7 @@
   },
   "props": {
     "defaultSize": {
-      "width": 803
+      "width": 675
     },
     "loading": {
       "mode": "blocking"
@@ -213,6 +213,17 @@
             "type": "ia.display.label"
           },
           {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tsettings \u003d self.parent.parent.getChild(\"Settings\")\n\t\n\tif settings.position.basis.lower() \u003d\u003d \u00270px\u0027:\n\t\tsettings.position.basis \u003d \u002732px\u0027\n\telse:\n\t\tsettings.position.basis \u003d \u00270px\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
             "meta": {
               "name": "Button"
             },
@@ -426,10 +437,17 @@
           }
         ],
         "meta": {
+          "domId": "test",
           "name": "Settings"
         },
         "position": {
-          "basis": "32px"
+          "basis": "0px"
+        },
+        "props": {
+          "style": {
+            "overflowX": "auto",
+            "overflowY": "hidden"
+          }
         },
         "type": "ia.container.flex"
       },
@@ -596,9 +614,9 @@
             {
               "align": "center",
               "boolean": "checkbox",
-              "dateFormat": "MM/DD/YYYY",
+              "dateFormat": "MM/DD/YYYY HH:mm:ss",
               "editable": true,
-              "field": "ㄱ51",
+              "field": "t_stamp",
               "filter": {
                 "boolean": {
                   "condition": ""
@@ -632,7 +650,99 @@
                 "style": {
                   "classes": ""
                 },
-                "title": "ㄱ51"
+                "title": "t_stamp"
+              },
+              "justify": "left",
+              "nullFormat": {
+                "includeNullStrings": true,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "none",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "date",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": true,
+              "field": "key",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "key"
               },
               "justify": "auto",
               "nullFormat": {
@@ -690,7 +800,7 @@
               "boolean": "checkbox",
               "dateFormat": "MM/DD/YYYY",
               "editable": true,
-              "field": "ㄷ2",
+              "field": "value",
               "filter": {
                 "boolean": {
                   "condition": ""
@@ -724,7 +834,7 @@
                 "style": {
                   "classes": ""
                 },
-                "title": "ㄷ2"
+                "title": "value"
               },
               "justify": "auto",
               "nullFormat": {
@@ -787,7 +897,16 @@
             }
           },
           "selection": {
-            "mode": "multiple interval"
+            "data": [
+              {
+                "key": "result",
+                "t_stamp": 1762145498734,
+                "value": "success"
+              }
+            ],
+            "mode": "multiple interval",
+            "selectedColumn": "t_stamp",
+            "selectedRow": 0
           }
         },
         "type": "ia.display.table"

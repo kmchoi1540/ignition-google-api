@@ -853,26 +853,11 @@
         "type": "ia.container.flex"
       },
       {
-        "custom": {
-          "value": {
-            "web": {
-              "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-              "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-              "client_id": "442659321863-ub0ll2urde2p85vfs2q0a74ggl5mp8rh.apps.googleusercontent.com",
-              "client_secret": "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",
-              "project_id": "home-86555",
-              "redirect_uris": [
-                "https://ig83.kmchoi1540.ddnsfree.com/system/webdev/google_api/google/oauth/redirect"
-              ],
-              "token_uri": "https://oauth2.googleapis.com/token"
-            }
-          }
-        },
         "events": {
           "component": {
             "onFileReceived": {
               "config": {
-                "script": "\tself.custom.value \u003d system.util.jsonDecode(event.file.getString())\n\t"
+                "script": "#\tself.custom.value \u003d system.util.jsonDecode(event.file.getString())\n\tpass\n\t"
               },
               "scope": "G",
               "type": "script"
