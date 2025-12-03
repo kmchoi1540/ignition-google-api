@@ -1,0 +1,7 @@
+{
+  "title": "Google API",
+  "description": "Google API",
+  "enabled": true,
+  "inheritable": false,
+  "parent": ""
+}

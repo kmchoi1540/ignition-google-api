@@ -1,0 +1,51 @@
+{
+  "name": "Google",
+  "parameters": {
+    "Project ID": {
+      "dataType": "String"
+    },
+    "Token URI": {
+      "dataType": "String",
+      "value": "https://oauth2.googleapis.com/token"
+    },
+    "Auth URI": {
+      "dataType": "String",
+      "value": "https://accounts.google.com/o/oauth2/auth"
+    },
+    "Scope": {
+      "dataType": "String",
+      "value": "https://www.googleapis.com/auth/cloud-platform"
+    },
+    "Redirect URI": {
+      "dataType": "String"
+    }
+  },
+  "tagType": "UdtType",
+  "tags": [
+    {
+      "valueSource": "memory",
+      "valuePersistence": "Database",
+      "dataType": "DataSet",
+      "name": "ServiceAccount",
+      "value": "{\"columns\":[{\"name\":\"client_email\",\"type\":\"java.lang.String\"},{\"name\":\"private_key\",\"type\":\"java.lang.String\"},{\"name\":\"access_token\",\"type\":\"java.lang.String\"},{\"name\":\"token_expiry\",\"type\":\"java.util.Date\"}],\"rows\":[[\"\",\"\",\"\",\"Tue Dec 02 04:26:02 UTC 2025\"]]}",
+      "tagType": "AtomicTag"
+    },
+    {
+      "valueSource": "memory",
+      "valuePersistence": "Database",
+      "dataType": "DataSet",
+      "name": "OAuthClient",
+      "value": "{\"columns\":[{\"name\":\"client_id\",\"type\":\"java.lang.String\"},{\"name\":\"client_secret\",\"type\":\"java.lang.String\"},{\"name\":\"refresh_token\",\"type\":\"java.lang.String\"},{\"name\":\"access_token\",\"type\":\"java.lang.String\"},{\"name\":\"token_expiry\",\"type\":\"java.util.Date\"}],\"rows\":[[\"\",\"\",\"\",\"\",\"Sun Nov 30 07:16:57 UTC 2025\"]]}",
+      "tagType": "AtomicTag"
+    },
+    {
+      "valueSource": "memory",
+      "dataType": "Boolean",
+      "documentation": "True: Use ServiceAccount Authentication, False: Use OAuth Authentication",
+      "name": "UseSA",
+      "tooltip": "True: Use ServiceAccount Authentication, False: Use OAuth Authentication",
+      "value": true,
+      "tagType": "AtomicTag"
+    }
+  ]
+}

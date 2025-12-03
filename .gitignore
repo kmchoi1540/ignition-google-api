@@ -1,0 +1,13 @@
+# Ignore Ignition designer local settings
+designer-properties
+global-props
+
+# Ignore binary backups
+*.bak
+
+# Ignore Perspective auto-thumbnails
+**/thumbnail.png
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db

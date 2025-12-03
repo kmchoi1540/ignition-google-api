@@ -1,0 +1,1011 @@
+{
+  "custom": {
+    "devices": [
+      {
+        "label": "Sample_Tags",
+        "value": "[Sample_Tags]"
+      },
+      {
+        "label": "default",
+        "value": "[default]"
+      }
+    ],
+    "uploadComplete": false,
+    "web": ""
+  },
+  "params": {},
+  "propConfig": {
+    "custom.devices": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "direct",
+          "tagPath": "[System]Gateway/Devices"
+        },
+        "transforms": [
+          {
+            "code": "\tfrom system.tag import browse\n\tdeviceList \u003d [{\"value\":str(tag[\"fullPath\"]), \"label\":str(tag[\"name\"])} for tag in browse().getResults() if tag[\"name\"].lower() !\u003d \u0027system\u0027 ]\n\treturn sorted(deviceList)",
+            "type": "script"
+          }
+        ],
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.uploadComplete": {
+      "persistent": true
+    },
+    "custom.web": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 498
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "config": {
+                        "script": "\tself.parent.parent.getChild(\"TagBrowser\").getChild(\"TagBrowseTree\").props.selection.values \u003d []\n\tself.parent.parent.getChild(\"TagBrowser\").getChild(\"CreateTag\").getChild(\"TagPath\").getChild(\"TextField\").props.text \u003d \u0027\u0027\n\tself.parent.parent.parent.getChild(\"ManualEntry\").getChild(\"TagPath\").getChild(\"TextField\").props.text \u003d \u0027\u0027\n\tsystem.perspective.sendMessage(\"refresh\", scope\u003d \"page\")\n\tself.parent.parent.parent.getChild(\"RootTagBrowser\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"ManualEntry\").position.display \u003d True\n\tself.parent.parent.parent.getChild(\"FileUpload\").position.display \u003d True\n\tself.parent.parent.parent.getChild(\"Buttons\").position.display \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "Back"
+                },
+                "position": {
+                  "basis": "45px",
+                  "shrink": 0
+                },
+                "props": {
+                  "image": {
+                    "height": 28,
+                    "icon": {
+                      "color": "#555555",
+                      "path": "material/keyboard_backspace"
+                    },
+                    "width": 36
+                  },
+                  "primary": false,
+                  "text": ""
+                },
+                "type": "ia.input.button"
+              },
+              {
+                "meta": {
+                  "name": "Blank"
+                },
+                "position": {
+                  "basis": "10px",
+                  "shrink": 0
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Icon"
+                },
+                "position": {
+                  "basis": "15px",
+                  "shrink": 0
+                },
+                "props": {
+                  "path": "material/play_arrow"
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Edit"
+                },
+                "position": {
+                  "basis": "80px",
+                  "grow": 1,
+                  "shrink": 0
+                },
+                "props": {
+                  "text": "Choose Tag"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Blank_0"
+                },
+                "position": {
+                  "basis": "5px",
+                  "shrink": 0
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "meta": {
+              "name": "Menu"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "borderStyle": "none",
+                "classes": "exchange/sfc-execution/components/input/indicator_gray",
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "80px",
+                  "shrink": 0
+                },
+                "props": {
+                  "text": "Device"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Dropdown"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.options": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.devices"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "props.value": {
+                    "persistent": false
+                  }
+                },
+                "props": {
+                  "placeholder": {
+                    "text": "Select Root Tag Device"
+                  },
+                  "search": {
+                    "enabled": false
+                  }
+                },
+                "type": "ia.input.dropdown"
+              }
+            ],
+            "meta": {
+              "name": "Device"
+            },
+            "position": {
+              "basis": "30px",
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "margin": 3,
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "TagBrowseTree"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "propConfig": {
+                  "props.root.path": {
+                    "binding": {
+                      "config": {
+                        "path": ".../Device/Dropdown.props.value"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "root": {},
+                  "selection": {
+                    "mode": "single"
+                  },
+                  "style": {
+                    "borderStyle": "none"
+                  }
+                },
+                "scripts": {
+                  "customMethods": [],
+                  "extensionFunctions": [
+                    {
+                      "enabled": true,
+                      "name": "filterBrowseNode",
+                      "script": "\tfrom com.inductiveautomation.ignition.common.tags.config.types import TagObjectType\n\tfrom com.inductiveautomation.ignition.common.sqltags.model.types import DataType\n\n\ttry:\n\t\tobject_type \u003d str(node.getObjectType()).strip().lower()  # Normalize ObjectType to String\n\t\t# Allow folders, UDT instances\n\t\tif object_type \u003d\u003d \"folder\" or object_type \u003d\u003d \"udtinstance\":\n\t\t\treturn True\n\t\t# Exclude rest\n\t\treturn False\n\n\texcept Exception as e:\n\t\t# Log unexpected errors for diagnosis\n\t\tsystem.perspective.print(\"ERROR in filterBrowseNode: %s\" % e)\n\t\treturn False"
+                    }
+                  ],
+                  "messageHandlers": []
+                },
+                "type": "ia.display.tag-browse-tree"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "basis": "40px",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "text": "Create Root Tag (If necessary...)"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "name": "Blank"
+                        },
+                        "position": {
+                          "basis": "3px",
+                          "shrink": 0
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Folder"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "..../TagBrowseTree.props.selection.values[0]"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "if(\r\nisBadOrError({value}),\r\n{...../Device/Dropdown.props.value},\r\n{value}\r\n)",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "textStyle": {
+                            "classes": " "
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Slash"
+                        },
+                        "position": {
+                          "basis": "5px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "path": "..../CreateTag.custom.data"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value}[\"folderType\"]\u003d\u0027Folder\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "text": "/"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "Blank_0"
+                        },
+                        "position": {
+                          "basis": "3px",
+                          "shrink": 0
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "name": "TextField"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "position.display": {
+                            "binding": {
+                              "config": {
+                                "path": "..../CreateTag.custom.data"
+                              },
+                              "transforms": [
+                                {
+                                  "expression": "{value}[\"folderType\"]\u003d\u0027Folder\u0027\r\n||{value}[\"folderType\"]\u003d\u0027Provider\u0027",
+                                  "type": "expression"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#FFFFFF00"
+                          }
+                        },
+                        "type": "ia.input.text-field"
+                      },
+                      {
+                        "meta": {
+                          "name": "Blank_1"
+                        },
+                        "position": {
+                          "basis": "10px",
+                          "shrink": 0
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "name": "TagPath"
+                    },
+                    "position": {
+                      "basis": "20px"
+                    },
+                    "props": {
+                      "justify": "center",
+                      "style": {
+                        "overflow": "visible"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "meta": {
+                      "name": "Blank"
+                    },
+                    "position": {
+                      "basis": "5px",
+                      "shrink": 0
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "events": {
+                      "component": {
+                        "onActionPerformed": [
+                          {
+                            "config": {
+                              "script": "\troot \u003d self.view.getChild(\"root\")\n\troot.createTag(self.parent.custom.data.folder, self.parent.custom.data.name)"
+                            },
+                            "scope": "G",
+                            "type": "script"
+                          },
+                          {
+                            "config": {
+                              "script": "\tsystem.perspective.sendMessage(\u0027refresh\u0027, scope\u003d\u0027page\u0027)"
+                            },
+                            "scope": "G",
+                            "type": "script"
+                          }
+                        ]
+                      }
+                    },
+                    "meta": {
+                      "name": "Button"
+                    },
+                    "position": {
+                      "basis": "25px"
+                    },
+                    "propConfig": {
+                      "props.enabled": {
+                        "binding": {
+                          "config": {
+                            "path": "parent.custom.data"
+                          },
+                          "transforms": [
+                            {
+                              "code": "\tfrom system.tag import exists\n\ttry:\n\t\tif (not exists(self.parent.custom.fullPath)) and (value[\"name\"][0] !\u003d \u0027 \u0027) and (value[\"name\"].replace(\u0027 \u0027, \u0027\u0027)) and (value[\"folderType\"].lower() in [\"provider\", \"folder\"]):\n\t\t\treturn True\n\t\telse:\n\t\t\treturn False\n\texcept Exception as e:\n\t\treturn False",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "primary": false,
+                      "style": {
+                        "marginLeft": 10,
+                        "width": 100
+                      },
+                      "text": "Create Tag"
+                    },
+                    "type": "ia.input.button"
+                  },
+                  {
+                    "meta": {
+                      "name": "Blank_0"
+                    },
+                    "position": {
+                      "basis": "5px",
+                      "shrink": 0
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "custom": {
+                  "data": {}
+                },
+                "meta": {
+                  "name": "CreateTag"
+                },
+                "position": {
+                  "basis": "100px",
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "custom.data.folder": {
+                    "binding": {
+                      "config": {
+                        "path": "./TagPath/Folder.props.text"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "custom.data.folderType": {
+                    "binding": {
+                      "config": {
+                        "fallbackDelay": 2.5,
+                        "mode": "indirect",
+                        "references": {
+                          "folderPath": "{this.custom.data.folder}"
+                        },
+                        "tagPath": "{folderPath}.TagType"
+                      },
+                      "type": "tag"
+                    }
+                  },
+                  "custom.data.name": {
+                    "binding": {
+                      "config": {
+                        "path": "./TagPath/TextField.props.text"
+                      },
+                      "type": "property"
+                    }
+                  },
+                  "custom.fullPath": {
+                    "binding": {
+                      "config": {
+                        "path": "this.custom.data"
+                      },
+                      "transforms": [
+                        {
+                          "expression": "{value}[\"folder\"]\r\n+if(split({value}[\"folder\"],\u0027\u0027)[len(split({value}[\"folder\"],\u0027\u0027))-1,0]\u003d\u0027]\u0027,\u0027\u0027,\u0027/\u0027)\r\n+{value}[\"name\"]",
+                          "type": "expression"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "position.display": {
+                    "binding": {
+                      "config": {
+                        "path": "this.custom.data.folderType"
+                      },
+                      "transforms": [
+                        {
+                          "fallback": false,
+                          "inputType": "scalar",
+                          "mappings": [
+                            {
+                              "input": "Folder",
+                              "output": true
+                            },
+                            {
+                              "input": "Provider",
+                              "output": true
+                            }
+                          ],
+                          "outputType": "scalar",
+                          "type": "map"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "TagBrowser"
+            },
+            "position": {
+              "grow": 1
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "custom": {
+              "enable": {}
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": [
+                  {
+                    "config": {
+                      "script": "\tselectedTag \u003d self.parent.getChild(\"TagBrowser\").getChild(\"TagBrowseTree\").props.selection.values[0]\n\tself.parent.getChild(\"TagBrowser\").getChild(\"CreateTag\").getChild(\"TagPath\").getChild(\"TextField\").props.text \u003d \u0027\u0027\n\tself.parent.parent.getChild(\"ManualEntry\").getChild(\"TagPath\").getChild(\"TextField\").props.text \u003d selectedTag"
+                    },
+                    "scope": "G",
+                    "type": "script"
+                  },
+                  {
+                    "config": {
+                      "script": "\tself.parent.getChild(\"TagBrowser\").getChild(\"TagBrowseTree\").props.selection.values \u003d []\n\tsystem.perspective.sendMessage(\"refresh\", scope\u003d \"page\")\n\tself.parent.position.display\u003d False\n\tself.parent.parent.getChild(\"ManualEntry\").position.display \u003d True"
+                    },
+                    "scope": "G",
+                    "type": "script"
+                  }
+                ]
+              }
+            },
+            "meta": {
+              "name": "ChooseTag"
+            },
+            "position": {
+              "basis": "40px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "custom.enable.selected": {
+                "binding": {
+                  "config": {
+                    "path": "../TagBrowser/TagBrowseTree.props.selection.values"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "len({value})\u003e0",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "custom.enable.type": {
+                "binding": {
+                  "config": {
+                    "fallbackDelay": 2.5,
+                    "mode": "indirect",
+                    "references": {
+                      "fullPath": "{../TagBrowser/TagBrowseTree.props.selection.values[0]}"
+                    },
+                    "tagPath": "{fullPath}.TypeId"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": false,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": "Google",
+                          "output": true
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "tag"
+                }
+              },
+              "props.enabled": {
+                "binding": {
+                  "config": {
+                    "path": "this.custom.enable"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "{value}[\"type\"]\u0026\u0026{value}[\"selected\"]",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.setValue": {
+                "binding": {
+                  "config": {
+                    "path": "this.props.value"
+                  },
+                  "transforms": [
+                    {
+                      "fallback": 0,
+                      "inputType": "scalar",
+                      "mappings": [
+                        {
+                          "input": 0,
+                          "output": 1
+                        }
+                      ],
+                      "outputType": "scalar",
+                      "type": "map"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "confirm": {
+                "enabled": true,
+                "text": "Choose new Root Tag?"
+              },
+              "primary": false,
+              "readyState": {
+                "icon": {
+                  "style": {
+                    "height": "24px",
+                    "width": "2rem"
+                  }
+                },
+                "text": "Choose Root Tag"
+              },
+              "value": 1,
+              "writingState": {
+                "icon": {
+                  "path": "material/hourglass_empty",
+                  "style": {
+                    "height": "24px",
+                    "width": "2rem"
+                  }
+                },
+                "text": ""
+              }
+            },
+            "type": "ia.input.oneshotbutton"
+          }
+        ],
+        "meta": {
+          "name": "RootTagBrowser"
+        },
+        "position": {
+          "basis": "550px",
+          "display": false
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "126px"
+                },
+                "props": {
+                  "text": "Root Tag Path"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onMouseDown": {
+                      "config": {
+                        "script": "\tself.parent.parent.parent.getChild(\"ManualEntry\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"FileUpload\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"Buttons\").position.display \u003d False\n\tself.parent.parent.parent.getChild(\"RootTagBrowser\").position.display \u003d True"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "TextField"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "spellcheck": false,
+                  "style": {
+                    "backgroundColor": "#FFFFFF80"
+                  }
+                },
+                "type": "ia.input.text-field"
+              },
+              {
+                "meta": {
+                  "name": "Blank"
+                },
+                "position": {
+                  "basis": "5px"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "meta": {
+                  "name": "Helper",
+                  "tooltip": {
+                    "enabled": true
+                  }
+                },
+                "position": {
+                  "basis": "30px"
+                },
+                "propConfig": {
+                  "meta.tooltip.text": {
+                    "binding": {
+                      "config": {
+                        "path": "parent.custom.data.helper"
+                      },
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "path": "material/help"
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "meta": {
+                  "name": "Blank_0"
+                },
+                "position": {
+                  "basis": "5px"
+                },
+                "type": "ia.display.label"
+              }
+            ],
+            "custom": {
+              "data": {
+                "helper": "Please select the Root UDT-type Tag to store your "
+              }
+            },
+            "meta": {
+              "name": "TagPath"
+            },
+            "position": {
+              "basis": "342px",
+              "grow": 1
+            },
+            "propConfig": {
+              "custom.data.value": {
+                "binding": {
+                  "config": {
+                    "path": "./TextField.props.text"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "ManualEntry"
+        },
+        "position": {
+          "basis": "32.1px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "custom": {
+          "value": {
+            "web": {
+              "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+              "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+              "client_id": "442659321863-ub0ll2urde2p85vfs2q0a74ggl5mp8rh.apps.googleusercontent.com",
+              "client_secret": "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",
+              "project_id": "home-86555",
+              "redirect_uris": [
+                "https://ig83.kmchoi1540.ddnsfree.com/system/webdev/google_api/google/oauth/redirect"
+              ],
+              "token_uri": "https://oauth2.googleapis.com/token"
+            }
+          }
+        },
+        "events": {
+          "component": {
+            "onFileReceived": {
+              "config": {
+                "script": "\tself.custom.value \u003d system.util.jsonDecode(event.file.getString())\n\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "FileUpload"
+        },
+        "position": {
+          "basis": "96px"
+        },
+        "props": {
+          "fileSizeLimit": 1,
+          "maxUploads": 1,
+          "supportedFileTypes": [
+            "json"
+          ]
+        },
+        "type": "ia.input.fileupload"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Confirm"
+            },
+            "position": {
+              "basis": "10px",
+              "grow": 1
+            },
+            "props": {
+              "confirm": {
+                "enabled": true
+              },
+              "readyState": {
+                "icon": {
+                  "style": {
+                    "height": "24px",
+                    "width": "2rem"
+                  }
+                },
+                "text": "Complete"
+              },
+              "writingState": {
+                "icon": {
+                  "path": "material/hourglass_empty",
+                  "style": {
+                    "height": "24px",
+                    "width": "2rem"
+                  }
+                },
+                "text": "On Progress..."
+              }
+            },
+            "type": "ia.input.oneshotbutton"
+          },
+          {
+            "meta": {
+              "name": "Cancel"
+            },
+            "position": {
+              "basis": "10px",
+              "grow": 1
+            },
+            "props": {
+              "confirm": {
+                "enabled": true
+              },
+              "readyState": {
+                "icon": {
+                  "style": {
+                    "height": "24px",
+                    "width": "2rem"
+                  }
+                },
+                "text": "Cancel"
+              },
+              "writingState": {
+                "icon": {
+                  "path": "material/hourglass_empty",
+                  "style": {
+                    "height": "24px",
+                    "width": "2rem"
+                  }
+                },
+                "text": "Initializing"
+              }
+            },
+            "type": "ia.input.oneshotbutton"
+          }
+        ],
+        "meta": {
+          "name": "Buttons"
+        },
+        "position": {
+          "basis": "92px"
+        },
+        "props": {
+          "justify": "space-around"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "justify": "space-around"
+    },
+    "scripts": {
+      "customMethods": [
+        {
+          "name": "createTag",
+          "params": [
+            "baseTagPath",
+            "tagName"
+          ],
+          "script": "\tfrom system.tag import configure\n\n\tdataType \u003d \"Boolean\"\n\ttagType \u003d \"UdtInstance\"\n\ttypeId \u003d \"Google\"\n\n\t# Configure the tag.\n\ttag \u003d {\n\t\t\t\"name\": u\u0027%s\u0027 % tagName,\n\t\t\t\"tagType\": u\u0027%s\u0027 % tagType,\n\t\t\t\u0027typeId\u0027: u\u0027%s\u0027 % typeId\n\t\t\t}\n\t\n\tcollisionPolicy \u003d \"m\"\n\t \n\t# Create the Tag.\n\tconfigure(baseTagPath, [tag], collisionPolicy)"
+        }
+      ],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "refresh",
+          "pageScope": true,
+          "script": "\tself.getChild(\"RootTagBrowser\").getChild(\"TagBrowser\").getChild(\"TagBrowseTree\").refreshBinding(\"props.root.path\")\n\tself.getChild(\"RootTagBrowser\").getChild(\"TagBrowser\").getChild(\"CreateTag\").getChild(\"Button\").refreshBinding(\"props.enabled\")\n#\tself.getChild(\"SfcBrowser\").getChild(\"SfcBrowser\").getChild(\"Tree\").refreshBinding(\"props.items\")\n#\tself.getChild(\"SfcBrowser\").getChild(\"SfcBrowser\").getChild(\"Tree\").props.selection \u003d []\n#\tself.getChild(\"SfcBrowser\").getChild(\"SfcBrowser\").getChild(\"Tree\").props.selectionData \u003d []",
+          "sessionScope": true,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

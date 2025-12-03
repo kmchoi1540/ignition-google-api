@@ -1,0 +1,899 @@
+{
+  "custom": {
+    "counters": [
+      0,
+      0
+    ],
+    "docStyle": {
+      "primaryFont": "Arial",
+      "themeColors": {}
+    },
+    "sheetData": "",
+    "useSA": false
+  },
+  "params": {
+    "config": {
+      "docId": "1QXhvvMehGxlF0OCSrUVMoOgFO2vvRaCnhAa22jVVxPk",
+      "rootPath": "[default]Google",
+      "rowAsHeader": true,
+      "sheetIdx": 0
+    }
+  },
+  "propConfig": {
+    "custom.counters": {
+      "persistent": true
+    },
+    "custom.docData": {
+      "persistent": false
+    },
+    "custom.docStyle": {
+      "persistent": true
+    },
+    "custom.docStyle.themeColors.accent1": {
+      "binding": {
+        "config": {
+          "path": "view.custom.docData.properties.spreadsheetTheme.themeColors[2].color.rgbColor"
+        },
+        "transforms": [
+          {
+            "expression": "concat(\r\n\t\"#\",\r\n\tif(\r\n\t\tcoalesce({value}[\u0027red\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027green\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027blue\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))\r\n\t),\r\n\t50\r\n)\r\n",
+            "type": "expression"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.docStyle.themeColors.accent2": {
+      "binding": {
+        "config": {
+          "path": "view.custom.docData.properties.spreadsheetTheme.themeColors[3].color.rgbColor"
+        },
+        "transforms": [
+          {
+            "expression": "concat(\r\n\t\"#\",\r\n\tif(\r\n\t\tcoalesce({value}[\u0027red\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027green\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027blue\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))\r\n\t)\r\n)\r\n",
+            "type": "expression"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.docStyle.themeColors.accent3": {
+      "binding": {
+        "config": {
+          "path": "view.custom.docData.properties.spreadsheetTheme.themeColors[4].color.rgbColor"
+        },
+        "transforms": [
+          {
+            "expression": "concat(\r\n\t\"#\",\r\n\tif(\r\n\t\tcoalesce({value}[\u0027red\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027green\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027blue\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))\r\n\t)\r\n)\r\n",
+            "type": "expression"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.docStyle.themeColors.accent4": {
+      "binding": {
+        "config": {
+          "path": "view.custom.docData.properties.spreadsheetTheme.themeColors[5].color.rgbColor"
+        },
+        "transforms": [
+          {
+            "expression": "concat(\r\n\t\"#\",\r\n\tif(\r\n\t\tcoalesce({value}[\u0027red\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027green\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027blue\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))\r\n\t)\r\n)\r\n",
+            "type": "expression"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.docStyle.themeColors.accent5": {
+      "binding": {
+        "config": {
+          "path": "view.custom.docData.properties.spreadsheetTheme.themeColors[6].color.rgbColor"
+        },
+        "transforms": [
+          {
+            "expression": "concat(\r\n\t\"#\",\r\n\tif(\r\n\t\tcoalesce({value}[\u0027red\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027green\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027blue\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))\r\n\t)\r\n)\r\n",
+            "type": "expression"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.docStyle.themeColors.accent6": {
+      "binding": {
+        "config": {
+          "path": "view.custom.docData.properties.spreadsheetTheme.themeColors[7].color.rgbColor"
+        },
+        "transforms": [
+          {
+            "expression": "concat(\r\n\t\"#\",\r\n\tif(\r\n\t\tcoalesce({value}[\u0027red\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027green\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027blue\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))\r\n\t)\r\n)\r\n",
+            "type": "expression"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.docStyle.themeColors.background": {
+      "binding": {
+        "config": {
+          "path": "view.custom.docData.properties.spreadsheetTheme.themeColors[1].color.rgbColor"
+        },
+        "transforms": [
+          {
+            "expression": "concat(\r\n\t\"#\",\r\n\tif(\r\n\t\tcoalesce({value}[\u0027red\u0027] * 255, 255) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 255))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 255))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027green\u0027] * 255, 255) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 255))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 255))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027blue\u0027] * 255, 255) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 255))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 255))))\r\n\t)\r\n)\r\n",
+            "type": "expression"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.docStyle.themeColors.text": {
+      "binding": {
+        "config": {
+          "path": "view.custom.docData.properties.spreadsheetTheme.themeColors[0].color.rgbColor"
+        },
+        "transforms": [
+          {
+            "expression": "concat(\r\n\t\"#\",\r\n\tif(\r\n\t\tcoalesce({value}[\u0027red\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027red\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027green\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027green\u0027] * 255, 0))))\r\n\t),\r\n\tif(\r\n\t\tcoalesce({value}[\u0027blue\u0027] * 255, 0) \u003c 16,\r\n\t\tconcat(\"0\", toHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))),\r\n\t\ttoHex(toInt(floor(coalesce({value}[\u0027blue\u0027] * 255, 0))))\r\n\t)\r\n)\r\n",
+            "type": "expression"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.docUpdated": {
+      "persistent": false
+    },
+    "custom.sheetData": {
+      "persistent": true
+    },
+    "custom.sheetUpdated": {
+      "persistent": false
+    },
+    "custom.useSA": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "rootPath": "{view.params.config.rootPath}"
+          },
+          "tagPath": "{rootPath}/UseSA"
+        },
+        "transforms": [
+          {
+            "expression": "coalesce({value},Null)",
+            "type": "expression"
+          }
+        ],
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.config": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "width": 803
+    },
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Title"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.docData.properties.title"
+                  },
+                  "transforms": [
+                    {
+                      "expression": "coalesce({value},\u0027Loading...\u0027)",
+                      "type": "expression"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "Button"
+            },
+            "position": {
+              "basis": "120px"
+            },
+            "props": {
+              "image": {
+                "icon": {
+                  "path": "material/settings"
+                }
+              },
+              "primary": false,
+              "text": "Settings"
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "HeaderContainer"
+        },
+        "position": {
+          "basis": "36px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Blank"
+            },
+            "position": {
+              "basis": "20px",
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "SettingsIcon"
+            },
+            "position": {
+              "basis": "30px"
+            },
+            "props": {
+              "path": "material/settings"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "HeaderCheckbox"
+            },
+            "position": {
+              "basis": "219px",
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.selected": {
+                "binding": {
+                  "config": {
+                    "bidirectional": true,
+                    "path": "view.params.config.rowAsHeader"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "overflow": "hidden"
+              },
+              "text": "Change Row As Header",
+              "textPosition": "left"
+            },
+            "type": "ia.input.checkbox"
+          },
+          {
+            "meta": {
+              "name": "Blank_0"
+            },
+            "position": {
+              "basis": "20px",
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "HeaderRowLabel"
+            },
+            "position": {
+              "basis": "103px"
+            },
+            "props": {
+              "text": "Header Row",
+              "textStyle": {
+                "textAlign": "end"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "HeaderRowEntryField"
+            },
+            "position": {
+              "basis": "53px"
+            },
+            "props": {
+              "format": "0,0",
+              "inputBounds": {
+                "minimum": 0
+              },
+              "value": 1
+            },
+            "type": "ia.input.numeric-entry-field"
+          },
+          {
+            "meta": {
+              "name": "Blank_1"
+            },
+            "position": {
+              "basis": "20px",
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "StartRowLabel"
+            },
+            "position": {
+              "basis": "103px"
+            },
+            "props": {
+              "text": "Starting Row",
+              "textStyle": {
+                "textAlign": "end"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "StartRowEntryField"
+            },
+            "position": {
+              "basis": "53px"
+            },
+            "props": {
+              "format": "0,0",
+              "inputBounds": {
+                "minimum": 0
+              },
+              "value": 2
+            },
+            "type": "ia.input.numeric-entry-field"
+          },
+          {
+            "meta": {
+              "name": "Blank_2"
+            },
+            "position": {
+              "basis": "20px",
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "EndingRowLabel"
+            },
+            "position": {
+              "basis": "103px"
+            },
+            "props": {
+              "text": "Ending Row",
+              "textStyle": {
+                "textAlign": "end"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "EndingRowEntryField"
+            },
+            "position": {
+              "basis": "53px"
+            },
+            "props": {
+              "format": "0,0",
+              "inputBounds": {
+                "minimum": 0
+              },
+              "value": 0
+            },
+            "type": "ia.input.numeric-entry-field"
+          },
+          {
+            "meta": {
+              "name": "Blank_3"
+            },
+            "position": {
+              "basis": "20px",
+              "grow": 1
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Settings"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "SheetNameDropdown"
+        },
+        "position": {
+          "basis": "36px"
+        },
+        "propConfig": {
+          "props.options": {
+            "binding": {
+              "config": {
+                "path": "view.custom.docData"
+              },
+              "transforms": [
+                {
+                  "code": "\ttry:\n\t\tsheets \u003d value.get(\"sheets\", [])\n\t\t\n\t\toptions \u003d []\n\t\tfor sheet in sheets:\n\t\t\tprops \u003d sheet.get(\"properties\", {})\n\t\t\tname \u003d props.get(\"title\")\n\t\t\tif name is not None:\n\t\t\t\toptions.append({\"value\": name, \"label\": name})\n\t\t\n\t\treturn options\n\texcept Exception as e:\n\t\treturn []",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.value": {
+            "persistent": false
+          }
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "HeaderCheckbox"
+        },
+        "position": {
+          "basis": "36px"
+        },
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.config.rowAsHeader"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "text": "Change Row As Header"
+        },
+        "type": "ia.input.checkbox"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": [
+              {
+                "config": {
+                  "script": "\trootPath \u003d self.view.params.config.rootPath\n\tdocId \u003d self.view.params.config.docId\n\tmethod \u003d \u0027getResource\u0027\n\t\n\tselected \u003d self.getSibling(\"SheetNameDropdown\").props.value\n\toptions \u003d self.getSibling(\"SheetNameDropdown\").props.options\n\t\n\tselectedIdx \u003d 0\n\tfor idx, opt in enumerate(options):\n\t\tif opt.get(\"value\") \u003d\u003d selected:\n\t\t\tselectedIdx \u003d idx\n\t\t\tbreak\n\n\tparams \u003d {\"sheetIdx\": selectedIdx}\n\tpayload \u003d {\"rootPath\":rootPath, \"docId\":docId, \"method\":method, \"params\": params}\n\tscope \u003d \u0027page\u0027\n\tself.view.custom.docUpdated \u003d False\n\tsystem.perspective.sendMessage(\u0027tryMethod\u0027, payload, scope)"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "script": "\troot \u003d self.parent\n\t\n\trootPath \u003d self.view.params.config.rootPath\n\tdocId \u003d self.view.params.config.docId\n\tmethod \u003d \u0027getSheet\u0027\n\t\n\tcounterIdx \u003d 0\n\twhile not self.view.custom.docUpdated:\n\t\troot.intervalCountUp(self.view.custom.counters[counterIdx], counterIdx)\n\t\tif self.view.custom.counters[counterIdx] \u003e\u003d 1000:\n\t\t\tsystem.perspective.print(\"getResource TimeOut.\")\n\t\t\tbreak\n\tself.view.custom.counters[counterIdx] \u003d 0\n\tif self.view.custom.docUpdated:\n\t\tselectedSheetName \u003d self.getSibling(\"SheetNameDropdown\").props.value\n\t\tsheetName \u003d selectedSheetName if selectedSheetName else self.view.custom.docData.sheets[0].properties.title\n\t\tparams \u003d {\n\t\t\t\t\"rowAsHeader\":self.getSibling(\"HeaderCheckbox\").props.selected,\n\t\t\t\t\"sheetName\":sheetName,\n\t\t\t\t\"headerRowIndex\":1, \n\t\t\t\t\"startRow\":2,\n\t\t\t\t\"endRow\":None\n\t\t\t\t}\n\t\tpayload \u003d {\"rootPath\":rootPath, \"docId\":docId, \"method\":method, \"params\":params}\n\t\tscope \u003d \u0027page\u0027\n\t\tself.view.custom.sheetUpdated \u003d False\n\t\tsystem.perspective.sendMessage(\u0027tryMethod\u0027, payload, scope)\n\telse:\n\t\tsystem.perspective.print(\"getResource Faulted\")"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "UpdateButton"
+        },
+        "position": {
+          "basis": "34px"
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "path": "view.custom.docUpdated"
+              },
+              "transforms": [
+                {
+                  "expression": "if(\r\nisBadOrError({value}),\r\nfalse,\r\n{value}\r\n)\r\n",
+                  "type": "expression"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/refresh"
+            }
+          },
+          "text": "",
+          "textStyle": {
+            "classes": "rotate"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.cells.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "path": "view.custom.docStyle.themeColors.background"
+              },
+              "type": "property"
+            }
+          },
+          "props.cells.style.color": {
+            "binding": {
+              "config": {
+                "path": "view.custom.docStyle.themeColors.text"
+              },
+              "type": "property"
+            }
+          },
+          "props.cells.style.fontFamily": {
+            "binding": {
+              "config": {
+                "path": "view.custom.docStyle.primaryFont"
+              },
+              "type": "property"
+            }
+          },
+          "props.data": {
+            "persistent": false
+          },
+          "props.selection.style.backgroundColor": {
+            "binding": {
+              "config": {
+                "path": "view.custom.docStyle.themeColors.accent1"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "cells": {
+            "style": {
+              "borderColor": "#EBEBEB",
+              "borderStyle": "solid",
+              "borderWidth": 1
+            }
+          },
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": true,
+              "field": "ㄱ51",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "ㄱ51"
+              },
+              "justify": "auto",
+              "nullFormat": {
+                "includeNullStrings": true,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": true,
+              "field": "ㄷ2",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "ㄷ2"
+              },
+              "justify": "auto",
+              "nullFormat": {
+                "includeNullStrings": true,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            }
+          ],
+          "rows": {
+            "highlight": {
+              "enabled": false
+            },
+            "striped": {
+              "enabled": false
+            }
+          },
+          "selection": {
+            "mode": "multiple interval"
+          }
+        },
+        "type": "ia.display.table"
+      }
+    ],
+    "events": {
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\tself.__init__(self.view.params.config.rootPath,\n\t\t\t\tself.view.params.config.docId,\n\t\t\t\tself.view.params.config.sheetIdx,\n\t\t\t\tself.view.params.config.rowAsHeader)"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "scripts": {
+      "customMethods": [
+        {
+          "name": "getAuth",
+          "params": [
+            "rootPath",
+            "useSA\u003dTrue"
+          ],
+          "script": "\tfrom google.auth import GoogleServiceAccountClient\n\n\tif rootPath and (useSA is not None):\n\t\tif useSA:\n\t\t\t# Service Account Client Instance\n\t\t\tauth \u003d GoogleServiceAccountClient(rootPath)\n\t\telse:\n\t\t\t# OAuth Client Instance\n\t\t\tauth \u003d GoogleOAuthClient(rootPath)\n\telse:\n\t\tauth \u003d \u0027\u0027\n\t\n\treturn auth"
+        },
+        {
+          "name": "getSheets",
+          "params": [
+            "rootPath",
+            "docId"
+          ],
+          "script": "\tfrom google.google_sheets import GoogleSheetsClient\n\t\n\tif rootPath and docId:\n\t\t# Sheets Client Instance\n\t\tsheets \u003d GoogleSheetsClient(rootPath, docId)\n\telse:\n\t\tsheets \u003d self.getDefaultDocData()\n\treturn sheets"
+        },
+        {
+          "name": "__init__",
+          "params": [
+            "rootPath\u003d\u0027\u0027",
+            "docId\u003d\u0027\u0027",
+            "sheetIdx\u003d0",
+            "rowAsHeader\u003dFalse"
+          ],
+          "script": "\tif docId and rootPath:\n\t\tself.view.custom.sheetData \u003d \u0027\u0027\n\t\tself.view.custom.docUpdated \u003d False\n\t\tself.view.custom.sheetUpdated \u003d False\n\t\tsystem.perspective.sendMessage(\u0027tryMethod\u0027, payload \u003d {\"rootPath\":rootPath, \"docId\":docId, \"method\":\u0027getResource\u0027, \"params\":{\"sheetIdx\":sheetIdx}}, scope \u003d \u0027page\u0027)\n\n\t\tcounterIdx \u003d 0\n\t\twhile not self.view.custom.docUpdated:\n\t\t\tself.intervalCountUp(self.view.custom.counters[counterIdx], counterIdx)\n\t\t\tif self.view.custom.counters[counterIdx] \u003e\u003d 1000:\n\t\t\t\tsystem.perspective.print(\"getResource TimeOut.\")\n\t\t\t\tbreak\n\t\tself.view.custom.counters[counterIdx] \u003d 0\n\t\n\t\tgetSheetParams \u003d {\n\t\t\t\t\t\t\"rowAsHeader\":rowAsHeader,\n\t\t\t\t\t\t\"sheetName\":self.view.custom.docData.sheets[sheetIdx].properties.title, \n\t\t\t\t\t\t\"headerRowIndex\":1, \n\t\t\t\t\t\t\"startRow\":2, \n\t\t\t\t\t\t\"endRow\":None\n\t\t\t\t\t\t}\n\t\tsystem.perspective.sendMessage(\u0027tryMethod\u0027, payload \u003d {\"rootPath\":rootPath, \"docId\":docId, \"method\":\u0027getSheet\u0027, \"params\":getSheetParams}, scope \u003d \u0027page\u0027)\n\telse:\n\t\tself.view.custom.sheetData \u003d \u0027\u0027\n\t\tself.view.custom.docUpdated \u003d True\n\t\tself.view.custom.sheetUpdated \u003d True\n\t\tsystem.perspective.sendMessage(\u0027tryMethod\u0027, payload \u003d {\"rootPath\":rootPath, \"docId\":docId, \"method\":\u0027getResource\u0027, \"params\":{}}, scope \u003d \u0027page\u0027)"
+        },
+        {
+          "name": "getDefaultDocData",
+          "params": [],
+          "script": "\tdefaultDocData \u003d {\n\t\t  \"sheets\": [{\"properties\": {\"sheetType\": \"GRID\", \"index\": 0, \"sheetId\": 0, \"title\": \"Sheet1\", \"gridProperties\": {}}}],\n\t\t  \"spreadsheetUrl\": \"\",\n\t\t  \"spreadsheetId\": \"\",\n\t\t  \"properties\": {\n\t\t    \"spreadsheetTheme\": {\n\t\t      \"themeColors\": [\n\t\t        {\"color\": {\"rgbColor\": {}}, \"colorType\": \"TEXT\"},\n\t\t        {\"color\": {\"rgbColor\": {}}, \"colorType\": \"BACKGROUND\"},\n\t\t        {\"color\": {\"rgbColor\": {}}, \"colorType\": \"ACCENT1\"},\n\t\t        {\"color\": {\"rgbColor\": {}}, \"colorType\": \"ACCENT2\"},\n\t\t        {\"color\": {\"rgbColor\": {}}, \"colorType\": \"ACCENT3\"},\n\t\t        {\"color\": {\"rgbColor\": {}}, \"colorType\": \"ACCENT4\"},\n\t\t        {\"color\": {\"rgbColor\": {}}, \"colorType\": \"ACCENT5\"},\n\t\t        {\"color\": {\"rgbColor\": {}}, \"colorType\": \"ACCENT6\"},\n\t\t        {\"color\": {\"rgbColor\": {}}, \"colorType\": \"LINK\"}\n\t\t      ],\n\t\t      \"primaryFontFamily\": \"\"\n\t\t    },\n\t\t    \"autoRecalc\": \"\",\n\t\t    \"timeZone\": \"\",\n\t\t    \"title\": \"Loading...\",\n\t\t    \"locale\": \"\",\n\t\t    \"defaultFormat\": {},\n\t\t      \"verticalAlignment\": \"\",\n\t\t      \"textFormat\": {}\n\t\t    }\n\t\t  }\n\treturn defaultDocData"
+        },
+        {
+          "name": "intervalCountUp",
+          "params": [
+            "counter",
+            "counterIdx\u003d0"
+          ],
+          "script": "\tfrom threading import Timer\n\t\n\tdef countUp(counter, counterIdx):\n\t\tcounter +\u003d 1\n\t\tself.view.custom.counters[counterIdx] \u003d counter\n\t\n\tTimer(0.1, countUp, [counter, counterIdx]).start()"
+        },
+        {
+          "name": "getResource",
+          "params": [
+            "rootPath",
+            "docId"
+          ],
+          "script": "\t# Create GoogleSheetsClient\n\tsheets \u003d self.getSheets(rootPath, docId)\n\n\t# Fetch Spreadsheet Resource\n\t# This returns: { sheets: [...], properties: {...}, ... }\n\treturn sheets.get_spreadsheet_resource()"
+        },
+        {
+          "name": "getSheet",
+          "params": [
+            "rootPath",
+            "docId",
+            "rowAsHeader",
+            "sheetName",
+            "headerRowIndex",
+            "startRow",
+            "endRow"
+          ],
+          "script": "\t# Create GoogleSheetsClient\n\tsheets \u003d self.getSheets(rootPath, docId)\n\t\n\tif rowAsHeader:\n\n\t\t# Produce: [{header1:val, header2:val, ...}, {...}, ...]\n\t\treturn sheets.get_dict_rows(\n\t\t\tsheetName,\n\t\t\theaderRowIndex,\n\t\t\tstartRow,\n\t\t\tendRow\n\t\t)\n\n\t# --------------------------------------------------------------\n\t# 2B) Mode 2: Raw grid data (A,B,C,...)\n\t# --------------------------------------------------------------\n\telse:\n\t\t# If user did not specify endRow, limit to 702 columns (A–ZZ)\n\t\tendRow \u003d 702 if not endRow else endRow\n\n\t\trange_a1 \u003d u\"%s!A%d:ZZ%d\" % (sheetName, headerRowIndex, endRow)\n\n\t\t# get_rows returns: [{\"A\":..., \"B\":..., ...}, {...}, ...]\n\t\treturn sheets.get_rows(range_a1)"
+        },
+        {
+          "name": "getDefaultTableColumn",
+          "params": [
+            "columnName\u003d\"\"",
+            "headerName\u003d\"\"",
+            "dataType\u003d\"auto\"",
+            "editable\u003dTrue"
+          ],
+          "script": "\tcolumn \u003d {\n\t  \"field\": columnName,\n\t  \"visible\": True,\n\t  \"editable\": editable,\n\t  \"render\": dataType,\n\t  \"justify\": \"auto\",\n\t  \"align\": \"center\",\n\t  \"resizable\": True,\n\t  \"sortable\": True,\n\t  \"sort\": \"none\",\n\t  \"filter\": {\n\t    \"enabled\": False,\n\t    \"visible\": \"on-hover\",\n\t    \"string\": {\n\t      \"condition\": \"\",\n\t      \"value\": \"\"\n\t    },\n\t    \"number\": {\n\t      \"condition\": \"\",\n\t      \"value\": \"\"\n\t    },\n\t    \"boolean\": {\n\t      \"condition\": \"\"\n\t    },\n\t    \"date\": {\n\t      \"condition\": \"\",\n\t      \"value\": \"\"\n\t    }\n\t  },\n\t  \"viewPath\": \"\",\n\t  \"viewParams\": {},\n\t  \"boolean\": \"checkbox\",\n\t  \"number\": \"value\",\n\t  \"progressBar\": {\n\t    \"max\": 100,\n\t    \"min\": 0,\n\t    \"bar\": {\n\t      \"color\": \"\",\n\t      \"style\": {\n\t        \"classes\": \"\"\n\t      }\n\t    },\n\t    \"track\": {\n\t      \"color\": \"\",\n\t      \"style\": {\n\t        \"classes\": \"\"\n\t      }\n\t    },\n\t    \"value\": {\n\t      \"enabled\": True,\n\t      \"format\": \"0,0.##\",\n\t      \"justify\": \"center\",\n\t      \"style\": {\n\t        \"classes\": \"\"\n\t      }\n\t    }\n\t  },\n\t  \"toggleSwitch\": {\n\t    \"color\": {\n\t      \"selected\": \"\",\n\t      \"unselected\": \"\"\n\t    }\n\t  },\n\t  \"nullFormat\": {\n\t    \"includeNullStrings\": True,\n\t    \"strict\": False,\n\t    \"nullFormatValue\": \"\"\n\t  },\n\t  \"numberFormat\": \"0,0.##\",\n\t  \"dateFormat\": \"MM/DD/YYYY\",\n\t  \"width\": \"\",\n\t  \"strictWidth\": False,\n\t  \"style\": {\n\t    \"classes\": \"\"\n\t  },\n\t  \"header\": {\n\t    \"title\": headerName,\n\t    \"justify\": \"center\",\n\t    \"align\": \"center\",\n\t    \"style\": {\n\t      \"classes\": \"\"\n\t    }\n\t  },\n\t  \"footer\": {\n\t    \"title\": \"\",\n\t    \"justify\": \"left\",\n\t    \"align\": \"center\",\n\t    \"style\": {\n\t      \"classes\": \"\"\n\t    }\n\t  }\n\t}\n\treturn column"
+        }
+      ],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "tryMethod",
+          "pageScope": true,
+          "script": "\t\"\"\"\n\tThis handler is triggered when a Perspective Message is received\n\t(from system.perspective.sendMessage).\n\n\tThe message payload contains:\n\t    - rootPath : Path to the Google UDT instance\n\t    - method   : Which Sheet method to execute (\"getResource\", \"getSheet\", \"append\", \"update\", \"clear\")\n\t    - docId    : Google Spreadsheet ID\n\t    - params   : Additional arguments for each operation\n\n\tThis function:\n\t    1. Determines which operation is requested\n\t    2. Obtains the appropriate Google authentication object\n\t    3. Calls Google Sheets helper functions\n\t    4. Updates Perspective Table / Dropdown components\n\t    5. Signals completion via view.custom.docUpdated / sheetUpdated\n\t\"\"\"\n\n\trootPath   \u003d payload.get(\"rootPath\", None)\n\tmethodType \u003d payload.get(\"method\", None)\n\tdocId      \u003d payload.get(\"docId\", \u0027\u0027)\n\tparams     \u003d payload.get(\"params\", \u0027\u0027)\n\n\ttry:\n\t\t# ----------------------------------------------------------------------\n\t\t#  Validate required fields (rootPath + docId)\n\t\t# ----------------------------------------------------------------------\n\t\tif rootPath and docId:\n\t\t\t# Perspective Table reference shortcut\n\t\t\ttable  \u003d self.getChild(\"Table\")\n\n\t\t\t# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\t\t\t# 1) getResource: Load spreadsheet metadata (sheet list, titles, etc.)\n\t\t\t# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\t\t\tif methodType \u003d\u003d \u0027getResource\u0027:\n\t\t\t\tself.view.custom.docData \u003d self.getResource(rootPath, docId)\n\t\t\t\t\n\t\t\t\trows \u003d params.get(\"sheetIdx\", 0)\n\t\t\t\t\n\t\t\t\t# Which sheet to display initially\n\t\t\t\tsheetIdx \u003d rows\n\n\t\t\t\t# Update dropdown with sheet name\n\t\t\t\tself.getChild(\"SheetNameDropdown\").props.value \u003d \\\n\t\t\t\t\tself.view.custom.docData.sheets[sheetIdx].properties.title\n\n\t\t\t\t# Signal to UI that spreadsheet metadata is loaded\n\t\t\t\tself.view.custom.docUpdated \u003d True\n\n\t\t\t# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\t\t\t# 2) getSheet: Fetch sheet values (as raw rows OR dict rows)\n\t\t\t# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\t\t\telif methodType \u003d\u003d \u0027getSheet\u0027:\n\n\t\t\t\t# Params for row reading\n\t\t\t\trowAsHeader     \u003d params.get(\"rowAsHeader\", False)\n\t\t\t\tsheetName       \u003d params.get(\"sheetName\", \"Sheet1\")\n\t\t\t\theaderRowIndex  \u003d params.get(\"headerRowIndex\", 1)\n\t\t\t\tstartRow        \u003d params.get(\"startRow\", 2)\n\t\t\t\tendRow          \u003d params.get(\"endRow\", None)\n\n\t\t\t\trows \u003d self.getSheet(rootPath, docId, rowAsHeader, sheetName, headerRowIndex, startRow, endRow)\n\t\t\t\t\n\t\t\t\t# Update table data\n\t\t\t\ttable.props.data \u003d rows\n\n\t\t\t\t# Automatically create columns using the key order of the first row\n\t\t\t\tif rows:\n\t\t\t\t\tfirstRow \u003d rows[0]  # Ordered dict from getSheet\n\t\t\t\t\tcols \u003d []\n\n\t\t\t\t\t# Use keys in the exact order produced by getSheet\n\t\t\t\t\tfor key in firstRow.keys():\n\t\t\t\t\t\tcols.append(self.getDefaultTableColumn(key, key))\n\t\t\t\t\ttable.props.columns \u003d cols\n\n\t\t\t\t# Signal sheet data load complete\n\t\t\t\tcounterIdx \u003d 0\n\t\t\t\tself.view.custom.counters[counterIdx] \u003d 0\n\t\t\t\tself.view.custom.sheetUpdated \u003d True\n\n\t\t\t# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\t\t\t# 3) append: Append dict-based rows (from UI or stored data)\n\t\t\t# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\t\t\telif methodType \u003d\u003d \u0027append\u0027:\n\n\t\t\t\t# Developer note:\n\t\t\t\t# append_dict_rows() must be fed header/data; here it\u0027s assumed\n\t\t\t\t# your function returns the final updated rows.\n\t\t\t\ttable.props.data \u003d sheets.append_dict_rows()\n\n\t\t\t\tself.view.custom.docUpdated \u003d True\n\n\t\t\t# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\t\t\t# 4) Invalid method\n\t\t\t# \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\t\t\telse:\n\t\t\t\tself.view.custom.docUpdated \u003d True\n\t\t\t\traise Exception(\"Method Unavailable\")\n\n\t\t# ----------------------------------------------------------------------\n\t\t# Missing rootPath or docId → set default docData and raise error\n\t\t# ----------------------------------------------------------------------\n\t\telse:\n\t\t\tself.view.custom.docData \u003d self.getDefaultDocData()\n\t\t\tself.view.custom.docUpdated \u003d True\n\t\t\tself.view.custom.sheetUpdated \u003d True\n\t\t\tcounterIdx \u003d 0\n\t\t\tself.view.custom.counters[counterIdx] \u003d 0\n\t\t\traise Exception(\"rootTagPath, docId is necessary\")\n\n\t# --------------------------------------------------------------------------\n\t# Exception Handling\n\t# --------------------------------------------------------------------------\n\texcept Exception as e:\n\t\t# Print to Perspective output console\n\t\tsystem.perspective.print(u\"%s\" % e)\n\n\t\t# Reset the UI to default state on error\n\t\tself.view.custom.docData \u003d self.getDefaultDocData()\n\t\tself.view.custom.docUpdated \u003d True\n\t\tself.view.custom.sheetUpdated \u003d True\n\t\t\n\t\t# Signal sheet data load complete\n\t\tcounterIdx \u003d 0\n\t\tself.view.custom.counters[counterIdx] \u003d 0",
+          "sessionScope": false,
+          "viewScope": true
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}
